@@ -1,426 +1,48 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Crear mi canción | Melodía Eterna</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"/>
 <link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="site-header">
-<div class="container header-inner">
-<a aria-label="Volver al inicio" class="brand" href="../index.html">
-<span class="brand-mark"><img alt="" src="../img/logo-simbolo.png"/></span>
-<span class="brand-text"><strong>Melodía Eterna</strong><small>Canciones personalizadas</small></span>
-</a>
-<a class="button button-secondary button-small" href="../index.html">Volver al inicio</a>
-</div>
-</header>
-<main class="form-page">
-<section class="form-intro">
-<div class="container form-intro-inner">
-<span class="section-kicker">Aquí comienza algo especial</span>
-<h1>Vamos a convertir tu historia en una canción</h1>
-<p>No necesitas saber escribir canciones. Solo cuéntanos tu historia, tus recuerdos y lo que quieres decir; nosotras nos encargamos de convertirlo en música.</p>
-<form class="song-wizard" id="song-form" novalidate="">
-<div aria-label="Progreso del formulario" class="wizard-progress">
-<div class="wizard-progress-top">
-<span id="progress-label">Paso 1 de 6</span>
-<span id="progress-percent">Tu experiencia</span>
-</div>
-<div class="wizard-track"><span id="progress-fill"></span></div>
-<div aria-hidden="true" class="wizard-dots">
-<span class="active"></span><span></span><span></span><span></span><span></span><span></span>
-</div>
-</div>
-<section aria-labelledby="step-1-title" class="wizard-step active" data-step="1">
-<div class="form-step-heading">
-<span class="form-step-number">Paso 1 de 6</span>
-<h2 id="step-1-title">Tu canción personalizada</h2>
-<p>Una opción simple para comenzar: tu historia convertida en una canción completa.</p>
-</div>
-<fieldset class="experience-options"><legend class="sr-only">Servicio seleccionado</legend>
-<label class="experience-option experience-option-featured">
-<input checked="" data-price="USD 15" name="experiencia" required="" type="radio" value="Canción personalizada"/>
-<span class="experience-option-inner">
-<span class="experience-badge">Precio de lanzamiento</span>
-<span class="experience-card-top"><span aria-hidden="true" class="experience-check"></span><span class="experience-select-text">Incluida</span></span>
-<span class="experience-name">Canción personalizada</span>
-<strong>USD 15</strong>
-<span class="experience-description">Una canción creada a partir de tu historia, recuerdos y sentimientos.</span>
-<span class="experience-divider"></span>
-<span class="experience-feature">✓ Canción completa personalizada</span>
-<span class="experience-feature">✓ Estilo musical y tipo de voz a elección</span>
-<span class="experience-feature">✓ Archivo final en MP3</span>
-<span class="experience-feature">✓ Entrega estimada de 1 a 3 días hábiles</span>
-<span class="experience-feature">✓ Una versión final, sin modificaciones posteriores</span>
-</span>
-</label></fieldset>
-<div class="experience-assurance"><span>♡</span><p><strong>Antes de continuar.</strong> Revisa bien la información que nos compartas: la versión final se crea a partir de estos datos y no incluye modificaciones posteriores.</p></div>
-</section>
-<section aria-labelledby="step-2-title" class="wizard-step" data-step="2">
-<div class="form-step-heading">
-<span class="form-step-number">Paso 2 de 6</span>
-<h2 id="step-2-title">Cuéntanos quién hace el pedido</h2>
-<p>Usaremos estos datos únicamente para comunicarnos contigo sobre tu canción.</p>
-</div>
-<div class="form-grid two-cols">
-<label class="field"><span>Tu nombre completo *</span><input autocomplete="name" name="comprador_nombre" placeholder="Ej. Marcela González" required="" type="text"/></label>
-<label class="field"><span>Correo electrónico *</span><input autocomplete="email" name="comprador_email" placeholder="tucorreo@ejemplo.com" required="" type="email"/></label>
-<label class="field"><span>Número de teléfono (WhatsApp) *</span><input autocomplete="tel" name="comprador_whatsapp" placeholder="Incluye el código de país" required="" type="tel"/></label>
-
-</div>
-</section>
-<section aria-labelledby="step-3-title" class="wizard-step" data-step="3">
-<div class="form-step-heading">
-<span class="form-step-number">Paso 3 de 6</span>
-<h2 id="step-3-title">¿Para quién será la canción?</h2>
-<p>Estos datos nos ayudan a darle a la historia el tono correcto desde el primer verso.</p>
-</div>
-<div class="form-grid two-cols">
-<label class="field"><span>Nombre de la persona *</span><input name="destinatario_nombre" placeholder="Como quieres que aparezca en la canción" required="" type="text"/></label>
-<label class="field"><span>¿Qué relación tiene contigo? *</span>
-<select name="relacion" required="">
-<option value="">Selecciona una opción</option>
-<option>Pareja</option><option>Mamá</option><option>Papá</option><option>Hija/o</option><option>Hermana/o</option><option>Amiga/o</option><option>Mascota</option><option>Otra</option>
-</select>
-</label>
-<label class="field conditional-inline" hidden="" id="relacion-otra-block"><span>Cuéntanos cuál relación *</span><input maxlength="30" name="relacion_otra" placeholder="Ej. compañera de trabajo" type="text"/></label>
-<label class="field"><span>Ocasión *</span>
-<select name="ocasion" required=""><option value="">Selecciona una opción</option><option value="Cumpleaños">Cumpleaños</option><option value="Aniversario">Aniversario</option><option value="Boda">Boda</option><option value="Pedida de matrimonio">Pedida de matrimonio</option><option value="Día de la Madre / Día del Padre">Día de la Madre / Día del Padre</option><option value="Homenaje o recuerdo de alguien especial">Homenaje o recuerdo de alguien especial</option><option value="Reconciliación / pedir perdón">Reconciliación / pedir perdón</option><option value="Declaración de amor">Declaración de amor</option><option value="Agradecimiento">Agradecimiento</option><option value="Graduación u otro logro">Graduación u otro logro</option><option value="Sin ocasión especial">Sin ocasión especial</option><option value="Otra">Otra</option></select>
-</label>
-<label class="field conditional-inline" hidden="" id="ocasion-otra-block"><span>Cuéntanos cuál ocasión *</span><input maxlength="30" name="ocasion_otra" placeholder="Ej. graduación" type="text"/></label>
-<label class="field"><span>Fecha especial <small>(opcional)</small></span><input name="fecha_especial" type="date"/></label>
-<label class="field full"><span>¿Cómo quieres que le hablemos en la canción?</span><input name="trato_destinatario" placeholder="Ej. amor, mamá, Pauli, mi compañero fiel..." type="text"/></label>
-</div>
-</section>
-<section aria-labelledby="step-4-title" class="wizard-step" data-step="4">
-<div class="form-step-heading">
-<span class="form-step-number">Paso 4 de 6</span>
-<h2 id="step-4-title">Cuéntanos su historia</h2>
-<p>No necesitas escribir bonito ni en orden. Cuéntanos lo que pasó; nosotras nos encargamos de convertirlo en canción.</p>
-</div>
-<div class="form-grid story-grid">
-<label class="field story-main"><span>La historia que quieres convertir en canción *</span><textarea name="historia" placeholder="¿Cómo se conocieron? ¿Qué han vivido juntas/os? ¿Por qué esta persona es especial?" required="" rows="8"></textarea></label>
-<label class="field story-memory"><span>Recuerdos o momentos que no pueden faltar <small>(opcional)</small></span><textarea name="recuerdos" placeholder="Una anécdota, un viaje, una dificultad superada, una costumbre especial..." rows="8"></textarea></label>
-<label class="field story-short"><span>Frase o palabra especial <small>(opcional)</small></span><textarea maxlength="160" name="frase_especial" placeholder="Ej. una frase que siempre se dicen o un apodo especial" rows="2"></textarea></label>
-<label class="field story-short"><span>Algo que prefieres no mencionar <small>(opcional)</small></span><textarea maxlength="160" name="evitar" placeholder="Ej. un nombre, tema o detalle que deseas evitar" rows="2"></textarea></label>
-<label class="field full"><span>¿Qué quieres que esa persona sienta al escucharla? *</span><textarea name="mensaje_emocional" placeholder="Ej. que se sienta amada, agradecerle, pedir perdón, recordar a alguien..." required="" rows="4"></textarea></label>
-</div>
-</section>
-<section aria-labelledby="step-5-title" class="wizard-step" data-step="5">
-<div class="form-step-heading">
-<span class="form-step-number">Paso 5 de 6</span>
-<h2 id="step-5-title">¿Cómo quieres que suene?</h2>
-<p>Elige una dirección musical. Si tienes dudas, también podemos orientarte según la historia.</p>
-</div>
-<div class="form-grid two-cols">
-<label class="field"><span>Estilo musical *</span>
-<select name="estilo" required=""><option value="">Selecciona una opción</option><option value="Balada">Balada</option><option value="Pop">Pop</option><option value="Pop Latino">Pop Latino</option><option value="Reguetón / urbano">Reguetón / urbano</option><option value="Salsa">Salsa</option><option value="Vallenato">Vallenato</option></select>
-</label>
-<label class="field"><span>Tipo de voz *</span>
-<select name="voz" required=""><option value="">Selecciona una opción</option><option value="Femenina">Femenina</option><option value="Masculina">Masculina</option><option value="Me da igual / elige la que mejor funcione">Me da igual / elige la que mejor funcione</option></select>
-</label>
-<label class="field"><span>Emoción principal *</span>
-<select name="emocion" required="">
-<option value="">Selecciona una opción</option><option>Amor / cariño</option><option>Alegre</option><option>Nostálgica</option><option>Profunda</option><option>Esperanzadora</option><option>Divertida</option><option>Conmovedora</option><option>Otra</option>
-</select>
-</label>
-<label class="field conditional-inline" hidden="" id="emocion-otra-block"><span>Cuéntanos cuál emoción *</span><input maxlength="30" name="emocion_otra" placeholder="Ej. orgullo o serenidad" type="text"/></label>
-<label class="field"><span>Ritmo *</span>
-<select name="ritmo" required="">
-<option value="">Selecciona una opción</option><option>Lento e íntimo</option><option>Medio y emotivo</option><option>Animado</option>
-</select>
-</label>
-</div>
-</section>
-<section aria-labelledby="step-6-title" class="wizard-step" data-step="6">
-<div class="form-step-heading">
-<span class="form-step-number">Paso 6 de 6</span>
-<h2 id="step-6-title">Últimos detalles y revisión</h2>
-<p>Revisa que todo esté correcto antes de preparar tu solicitud.</p>
-</div>
-
-
-
-<div class="review-card" id="review-card"></div>
-<label class="consent-check"><input name="confirmacion" required="" type="checkbox"/><span>He leído y acepto que el precio de lanzamiento es de US$15, que el tiempo estimado de entrega es de 1 a 3 días hábiles y que el servicio incluye una única versión final de la canción, sin modificaciones posteriores. Confirmo que he incluido toda la información que deseo que se tenga en cuenta para crearla.</span></label>
-</section>
-<div aria-live="polite" class="wizard-alert" id="wizard-alert" role="alert"></div>
-<div class="wizard-actions">
-<button class="button button-secondary" hidden="" id="prev-step" type="button">← Anterior</button>
-<button class="button" id="next-step" type="button">Continuar →</button>
-<button class="button" hidden="" id="submit-form" type="submit">Preparar mi solicitud ♥</button>
-</div>
-</form>
-<div class="success-panel" hidden="" id="success-panel">
-<span class="success-icon">♡</span>
-<p class="success-eyebrow">Tu solicitud está preparada</p>
-<h2>Ya casi está</h2>
-<p>Revisa tu información antes de enviarla. El pedido comenzará únicamente después de que confirmemos la recepción de tu solicitud y el pago.</p>
-<div class="order-summary"><p><strong>✔ Información revisada</strong></p><p><strong>✔ Solicitud preparada</strong></p><p><strong>⏳ La creación comenzará tras confirmar el pago.</strong></p></div>
-<button class="button" id="continue-payment" type="button">Continuar →</button>
-<button class="button button-secondary" id="back-edit" type="button">Revisar mi información</button>
-<small class="success-trust">🔒 Tu información será utilizada únicamente para gestionar y crear tu canción. Nunca será compartida con terceros.</small>
-<p aria-live="polite" class="payment-status" id="payment-status" role="status"></p>
-</div>
-</div>
-</section>
-</main>
-<iframe name="google-form-submit" id="google-form-submit" hidden></iframe>
+<header class="site-header"><div class="container header-inner"><a aria-label="Volver al inicio" class="brand" href="../index.html"><span class="brand-mark"><img alt="" src="../img/logo-simbolo.png"/></span><span class="brand-text"><strong>Melodía Eterna</strong><small>Canciones personalizadas</small></span></a><a class="button button-secondary button-small" href="../index.html">Volver al inicio</a></div></header>
+<main class="form-page"><section class="form-intro"><div class="container form-intro-inner">
+<span class="section-kicker">Aquí comienza algo especial</span><h1>Vamos a convertir tu historia en una canción</h1><p>No necesitas saber escribir canciones. Solo cuéntanos tu historia, tus recuerdos y lo que quieres decir; nosotras nos encargamos de convertirlo en música.</p>
+<form class="song-wizard" id="song-form" novalidate>
+<div aria-label="Progreso del formulario" class="wizard-progress"><div class="wizard-progress-top"><span id="progress-label">Paso 1 de 6</span><span id="progress-percent">Tu experiencia</span></div><div class="wizard-track"><span id="progress-fill"></span></div><div aria-hidden="true" class="wizard-dots"><span class="active"></span><span></span><span></span><span></span><span></span><span></span></div></div>
+<section aria-labelledby="step-1-title" class="wizard-step active" data-step="1"><div class="form-step-heading"><span class="form-step-number">Paso 1 de 6</span><h2 id="step-1-title">Tu canción personalizada</h2><p>Una opción simple para comenzar: tu historia convertida en una canción completa.</p></div><fieldset class="experience-options"><legend class="sr-only">Servicio seleccionado</legend><label class="experience-option experience-option-featured"><input checked data-price="USD 15" name="experiencia" required type="radio" value="Canción personalizada"/><span class="experience-option-inner"><span class="experience-badge">Precio de lanzamiento</span><span class="experience-card-top"><span aria-hidden="true" class="experience-check"></span><span class="experience-select-text">Incluida</span></span><span class="experience-name">Canción personalizada</span><strong>USD 15</strong><span class="experience-description">Una canción creada a partir de tu historia, recuerdos y sentimientos.</span><span class="experience-divider"></span><span class="experience-feature">✓ Canción completa personalizada</span><span class="experience-feature">✓ Estilo musical y tipo de voz a elección</span><span class="experience-feature">✓ Archivo final en MP3</span><span class="experience-feature">✓ Entrega estimada de 1 a 3 días hábiles</span><span class="experience-feature">✓ Una versión final, sin modificaciones posteriores</span></span></label></fieldset><div class="experience-assurance"><span>♡</span><p><strong>Antes de continuar.</strong> Revisa bien la información que nos compartas: la versión final se crea a partir de estos datos y no incluye modificaciones posteriores.</p></div></section>
+<section aria-labelledby="step-2-title" class="wizard-step" data-step="2"><div class="form-step-heading"><span class="form-step-number">Paso 2 de 6</span><h2 id="step-2-title">Cuéntanos quién hace el pedido</h2><p>Usaremos estos datos únicamente para comunicarnos contigo sobre tu canción.</p></div><div class="form-grid two-cols"><label class="field"><span>Tu nombre completo *</span><input autocomplete="name" name="comprador_nombre" placeholder="Ej. Marcela González" required type="text"/></label><label class="field"><span>Correo electrónico *</span><input autocomplete="email" name="comprador_email" placeholder="tucorreo@ejemplo.com" required type="email"/></label><label class="field"><span>Número de teléfono (WhatsApp) *</span><input autocomplete="tel" name="comprador_whatsapp" placeholder="Incluye el código de país" required type="tel"/></label></div></section>
+<section aria-labelledby="step-3-title" class="wizard-step" data-step="3"><div class="form-step-heading"><span class="form-step-number">Paso 3 de 6</span><h2 id="step-3-title">¿Para quién será la canción?</h2><p>Estos datos nos ayudan a darle a la historia el tono correcto desde el primer verso.</p></div><div class="form-grid two-cols"><label class="field"><span>Nombre de la persona *</span><input name="destinatario_nombre" placeholder="Como quieres que aparezca en la canción" required type="text"/></label><label class="field"><span>¿Qué relación tiene contigo? *</span><select name="relacion" required><option value="">Selecciona una opción</option><option>Pareja</option><option>Mamá</option><option>Papá</option><option>Hija/o</option><option>Amiga/o</option><option>Mascota</option><option>Otro</option></select></label><label class="field conditional-inline" hidden id="relacion-otra-block"><span>Cuéntanos cuál relación *</span><input maxlength="30" name="relacion_otra" placeholder="Ej. hermana, abuela, compañera de trabajo" type="text"/></label><label class="field"><span>Ocasión *</span><select name="ocasion" required><option value="">Selecciona una opción</option><option>Cumpleaños</option><option>Aniversario</option><option>Boda</option><option>Pedida de matrimonio</option><option>Día de la Madre / Día del Padre</option><option>Homenaje o recuerdo de alguien especial</option><option>Reconciliación / pedir perdón</option><option>Declaración de amor</option><option>Agradecimiento</option><option>Graduación u otro logro</option><option>Sin ocasión especial</option><option>Otra</option></select></label><label class="field conditional-inline" hidden id="ocasion-otra-block"><span>Cuéntanos cuál ocasión *</span><input maxlength="30" name="ocasion_otra" placeholder="Cuéntanos cuál" type="text"/></label></div></section>
+<section aria-labelledby="step-4-title" class="wizard-step" data-step="4"><div class="form-step-heading"><span class="form-step-number">Paso 4 de 6</span><h2 id="step-4-title">Cuéntanos su historia</h2><p>No necesitas escribir bonito ni en orden. Cuéntanos lo que pasó; nosotras nos encargamos de convertirlo en canción.</p></div><div class="form-grid story-grid"><label class="field story-main"><span>Cuéntanos la historia que quieres convertir en canción *</span><textarea name="historia" placeholder="Cuéntanos lo que pasó, qué significa esa persona para ti, qué quieres expresarle y cualquier detalle que nos ayude a contar su historia." required rows="8"></textarea></label><label class="field story-memory"><span>Recuerdos o momentos que no pueden faltar <small>(opcional)</small></span><textarea name="recuerdos" placeholder="Una anécdota, un viaje, una dificultad superada, una costumbre especial..." rows="8"></textarea></label><label class="field story-short"><span>Frase, palabra o detalle especial <small>(opcional)</small></span><textarea maxlength="220" name="frase_especial" placeholder="Puede ser un apodo, una frase entre ustedes, una palabra especial o una fecha importante." rows="3"></textarea></label><label class="field story-short"><span>Algo que prefieres que NO mencionemos <small>(opcional)</small></span><textarea maxlength="220" name="evitar" placeholder="Si hay algún tema, persona, situación o detalle que prefieras que no aparezca en la canción, indícalo aquí." rows="3"></textarea></label></div></section>
+<section aria-labelledby="step-5-title" class="wizard-step" data-step="5"><div class="form-step-heading"><span class="form-step-number">Paso 5 de 6</span><h2 id="step-5-title">¿Cómo quieres que suene?</h2><p>Elige la dirección musical que mejor represente lo que imaginas para tu canción.</p></div><div class="form-grid two-cols"><label class="field"><span>Estilo musical *</span><select name="estilo" required><option value="">Selecciona una opción</option><option>Balada</option><option>Pop</option><option>Pop Latino</option><option>Reguetón / urbano</option><option>Salsa</option><option>Vallenato</option><option>Regional mexicano</option><option>Otro</option></select></label><label class="field"><span>Tipo de voz *</span><select name="voz" required><option value="">Selecciona una opción</option><option value="Femenina">Femenina</option><option value="Masculina">Masculina</option><option value="Me da igual / elige la que mejor funcione">Me da igual / elige la que mejor funcione</option></select></label><label class="field"><span>Emoción o tono *</span><select name="emocion" required><option value="">Selecciona una opción</option><option>Romántica</option><option>Emotiva / sentimental</option><option>Alegre</option><option>Nostálgica</option><option>Divertida</option><option>Inspiradora</option><option>Otra</option></select></label><label class="field conditional-inline" hidden id="emocion-otra-block"><span>Cuéntanos cuál emoción *</span><input maxlength="30" name="emocion_otra" placeholder="Ej. orgullo o serenidad" type="text"/></label><label class="field"><span>Ritmo *</span><select name="ritmo" required><option value="">Selecciona una opción</option><option>Lento e íntimo</option><option>Medio y emotivo</option><option>Animado</option></select></label></div></section>
+<section aria-labelledby="step-6-title" class="wizard-step" data-step="6"><div class="form-step-heading"><span class="form-step-number">Paso 6 de 6</span><h2 id="step-6-title">Últimos detalles y revisión</h2><p>Revisa que todo esté correcto antes de preparar tu solicitud.</p></div><div class="review-card" id="review-card"></div><label class="consent-check"><input name="confirmacion" required type="checkbox"/><span>He leído y acepto que el precio de lanzamiento es de US$15, que el tiempo estimado de entrega es de 1 a 3 días hábiles y que el servicio incluye una única versión final de la canción, sin modificaciones posteriores. Confirmo que he incluido toda la información que deseo que se tenga en cuenta para crearla.</span></label></section>
+<div aria-live="polite" class="wizard-alert" id="wizard-alert" role="alert"></div><div class="wizard-actions"><button class="button button-secondary" hidden id="prev-step" type="button">← Anterior</button><button class="button" id="next-step" type="button">Continuar →</button><button class="button" hidden id="submit-form" type="submit">Preparar mi solicitud ♥</button></div></form>
+<div class="success-panel" hidden id="success-panel"><span class="success-icon">♡</span><p class="success-eyebrow">Tu solicitud está preparada</p><h2>Ya casi está</h2><p>Revisa tu información antes de enviarla. El pedido comenzará únicamente después de que confirmemos la recepción de tu solicitud y el pago.</p><div class="order-summary"><p><strong>✔ Información revisada</strong></p><p><strong>✔ Solicitud preparada</strong></p><p><strong>⏳ La creación comenzará tras confirmar el pago.</strong></p></div><button class="button" id="continue-payment" type="button">Continuar →</button><button class="button button-secondary" id="back-edit" type="button">Revisar mi información</button><small class="success-trust">🔒 Tu información será utilizada únicamente para gestionar y crear tu canción. Nunca será compartida con terceros.</small><p aria-live="polite" class="payment-status" id="payment-status" role="status"></p></div>
+</div></section></main><iframe name="google-form-submit" id="google-form-submit" hidden></iframe>
 <script>
-    const form = document.getElementById('song-form');
-    const steps = [...document.querySelectorAll('.wizard-step')];
-    const nextButton = document.getElementById('next-step');
-    const prevButton = document.getElementById('prev-step');
-    const submitButton = document.getElementById('submit-form');
-    const alertBox = document.getElementById('wizard-alert');
-    const progressFill = document.getElementById('progress-fill');
-    const progressLabel = document.getElementById('progress-label');
-    const progressPercent = document.getElementById('progress-percent');
-    const dots = [...document.querySelectorAll('.wizard-dots span')];
-    const reviewCard = document.getElementById('review-card');
-    const relacionOtraBlock = document.getElementById('relacion-otra-block');
-    const ocasionOtraBlock = document.getElementById('ocasion-otra-block');
-    const emocionOtraBlock = document.getElementById('emocion-otra-block');
-    const successPanel = document.getElementById('success-panel');
-    let currentStep = 1;
-
-    const escapeHtml = (value = '') => value.replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
-
-    function selectedPlan() {
-      return form.querySelector('input[name="experiencia"]:checked');
-    }
-
-    function toggleOtherField(selectName, block, inputName) {
-      const isOther = formValue(selectName) === 'Otra';
-      block.hidden = !isOther;
-      const input = form.elements[inputName];
-      input.required = isOther;
-      if (!isOther) {
-        input.value = '';
-        input.classList.remove('field-invalid');
-      }
-    }
-
-    function updateConditionalFields() {
-      toggleOtherField('relacion', relacionOtraBlock, 'relacion_otra');
-      toggleOtherField('ocasion', ocasionOtraBlock, 'ocasion_otra');
-      toggleOtherField('emocion', emocionOtraBlock, 'emocion_otra');
-    }
-
-    function resolvedValue(mainName, otherName) {
-      return formValue(mainName) === 'Otra' ? formValue(otherName) : formValue(mainName);
-    }
-
-    function updateProgress() {
-      const percent = Math.round((currentStep / steps.length) * 100);
-      progressFill.style.width = `${percent}%`;
-      progressLabel.textContent = `Paso ${currentStep} de ${steps.length}`;
-      progressPercent.textContent = ['Tu experiencia','Tus datos','La persona especial','Su historia','El estilo musical','Revisión final'][currentStep - 1];
-      dots.forEach((dot, index) => dot.classList.toggle('active', index < currentStep));
-    }
-
-    function showStep(number) {
-      currentStep = Math.max(1, Math.min(number, steps.length));
-      steps.forEach(step => step.classList.toggle('active', Number(step.dataset.step) === currentStep));
-      prevButton.hidden = currentStep === 1;
-      nextButton.hidden = currentStep === steps.length;
-      submitButton.hidden = currentStep !== steps.length;
-      alertBox.textContent = '';
-      updateConditionalFields();
-      if (currentStep === steps.length) buildReview();
-      updateProgress();
-      form.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
-    }
-
-    function validateCurrentStep() {
-      const step = steps[currentStep - 1];
-      const requiredFields = [...step.querySelectorAll('[required]')];
-      let firstInvalid = null;
-      requiredFields.forEach(field => {
-        field.classList.remove('field-invalid');
-        const invalid = field.type === 'radio'
-          ? !step.querySelector(`input[name="${field.name}"]:checked`)
-          : !field.checkValidity();
-        if (invalid && !firstInvalid) firstInvalid = field;
-      });
-      if (firstInvalid) {
-        alertBox.textContent = currentStep === 1 ? 'Elige una experiencia para continuar.' : 'Revisa los campos marcados antes de continuar.';
-        if (firstInvalid.type !== 'radio') {
-          firstInvalid.classList.add('field-invalid');
-          firstInvalid.focus();
-        } else {
-          step.querySelector('.experience-options')?.classList.add('options-invalid');
-        }
-        return false;
-      }
-      step.querySelector('.experience-options')?.classList.remove('options-invalid');
-      return true;
-    }
-
-    function formValue(name) {
-      const field = form.elements[name];
-      if (!field) return '';
-      if (field instanceof RadioNodeList) return field.value;
-      return field.value || '';
-    }
-
-    function buildReview() {
-      const plan = selectedPlan();
-      reviewCard.innerHTML = `
-        <h3>Resumen de tu pedido</h3>
-        <dl>
-          <div><dt>Experiencia</dt><dd>${escapeHtml(plan?.value || '')} · ${escapeHtml(plan?.dataset.price || '')}</dd></div>
-          <div><dt>Contacto</dt><dd>${escapeHtml(formValue('comprador_nombre'))}<br>${escapeHtml(formValue('comprador_email'))}<br>${escapeHtml(formValue('comprador_whatsapp'))}</dd></div>
-          <div><dt>Destinataria/o</dt><dd>${escapeHtml(formValue('destinatario_nombre'))} · ${escapeHtml(resolvedValue('relacion','relacion_otra'))}<br>${escapeHtml(resolvedValue('ocasion','ocasion_otra'))}</dd></div>
-          <div><dt>Dirección musical</dt><dd>${escapeHtml(formValue('estilo'))} · Voz ${escapeHtml(formValue('voz'))}<br>${escapeHtml(resolvedValue('emocion','emocion_otra'))} · ${escapeHtml(formValue('ritmo'))}</dd></div>
-          <div class="review-story"><dt>El corazón de la historia</dt><dd>${escapeHtml(formValue('historia')).replace(/\n/g,'<br>')}</dd></div>
-        </dl>`;
-    }
-
-
-    nextButton.addEventListener('click', () => {
-      if (currentStep >= steps.length || !validateCurrentStep()) return;
-      updateConditionalFields();
-      showStep(currentStep + 1);
-    });
-
-    prevButton.addEventListener('click', () => showStep(currentStep - 1));
-    form.addEventListener('change', event => {
-      if (['experiencia','relacion','ocasion','emocion'].includes(event.target.name)) updateConditionalFields();
-      event.target.classList.remove('field-invalid');
-      if (event.target.name === 'experiencia') {
-        document.querySelector('.experience-options')?.classList.remove('options-invalid');
-        alertBox.textContent = '';
-      }
-    });
-
-    form.addEventListener('input', event => {
-      if (event.target.matches('input, textarea, select')) {
-        event.target.classList.remove('field-invalid');
-        if (alertBox.textContent) alertBox.textContent = '';
-      }
-    });
-
-    const googleFormAction = 'https://docs.google.com/forms/d/e/1FAIpQLScbpRswoCbWtfdM_0oyOq0Q2wthCVuxztYfiT02W4uXHLTKlg/formResponse';
-    const googleEntry = {
-      nombre: 'entry.314691855',
-      correo: 'entry.1828749494',
-      whatsapp: 'entry.1013330642',
-      paraQuien: 'entry.1780938346',
-      historia: 'entry.2015353262',
-      detalleEspecial: 'entry.1693350233',
-      estilo: 'entry.2048079322',
-      voz: 'entry.1222206002',
-      emocion: 'entry.236304043',
-      ocasion: 'entry.1605650265',
-      ritmo: 'entry.510145914',
-      mensaje: 'entry.2009816708',
-      evitar: 'entry.1255368010',
-      condiciones: 'entry.1729874179'
-    };
-    const condicionesTexto = 'He leído y acepto que el precio de lanzamiento es de US$15, que el tiempo estimado de entrega es de 1 a 3 días hábiles y que el servicio incluye una única versión final de la canción, sin modificaciones posteriores. Confirmo que he incluido en este formulario toda la información que deseo que se tenga en cuenta para crearla.';
-
-    function submitToGoogleForms() {
-      const payload = new FormData();
-      payload.append(googleEntry.nombre, formValue('comprador_nombre'));
-      payload.append(googleEntry.correo, formValue('comprador_email'));
-      payload.append(googleEntry.whatsapp, formValue('comprador_whatsapp'));
-      payload.append(googleEntry.paraQuien, `${formValue('destinatario_nombre')} — ${resolvedValue('relacion','relacion_otra')}`);
-      payload.append(googleEntry.historia, formValue('historia'));
-      const detalleEspecial = [formValue('frase_especial'), formValue('recuerdos')]
-        .filter(Boolean).join(' | ');
-      payload.append(googleEntry.detalleEspecial, detalleEspecial);
-      const estiloMap = {'Pop latino':'Pop Latino','Pop Latino':'Pop Latino'};
-      payload.append(googleEntry.estilo, estiloMap[formValue('estilo')] || formValue('estilo'));
-      const vozMap = {
-        'Femenina': 'Voz femenina',
-        'Masculina': 'Voz masculina',
-        'Me da igual / elige la que mejor funcione': 'Me da igual / elige la que mejor funcione'
-      };
-      payload.append(googleEntry.voz, vozMap[formValue('voz')] || formValue('voz'));
-      const emocionRaw = resolvedValue('emocion','emocion_otra');
-      const emocionMap = {
-        'Amor / cariño': 'Romántica',
-        'Alegre': 'Alegre',
-        'Nostálgica': 'Nostálgica',
-        'Profunda': 'Emotiva / sentimental',
-        'Esperanzadora': 'Inspiradora',
-        'Divertida': 'Divertida',
-        'Conmovedora': 'Emotiva / sentimental'
-      };
-      payload.append(googleEntry.emocion, emocionMap[emocionRaw] || emocionRaw || 'Emotiva / sentimental');
-      payload.append(googleEntry.ocasion, resolvedValue('ocasion','ocasion_otra'));
-      payload.append(googleEntry.ritmo, formValue('ritmo'));
-      const mensajeParts = [formValue('mensaje_emocional')];
-      if (formValue('trato_destinatario')) mensajeParts.push(`Forma de dirigirse: ${formValue('trato_destinatario')}`);
-      if (formValue('fecha_especial')) mensajeParts.push(`Fecha especial: ${formValue('fecha_especial')}`);
-      payload.append(googleEntry.mensaje, mensajeParts.filter(Boolean).join(' | '));
-      payload.append(googleEntry.evitar, formValue('evitar'));
-      payload.append(googleEntry.condiciones, condicionesTexto);
-
-      // Google Forms accepts cross-origin POSTs, but does not expose a readable response to JavaScript.
-      // We submit into a hidden iframe so the client stays on the Melodía Eterna site.
-      const hiddenForm = document.createElement('form');
-      hiddenForm.method = 'POST';
-      hiddenForm.action = googleFormAction;
-      hiddenForm.target = 'google-form-submit';
-      hiddenForm.style.display = 'none';
-      for (const [name, value] of payload.entries()) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = name;
-        input.value = value;
-        hiddenForm.appendChild(input);
-      }
-      document.body.appendChild(hiddenForm);
-      hiddenForm.submit();
-      setTimeout(() => hiddenForm.remove(), 1500);
-    }
-
-    let googleSubmitStarted = false;
-    const googleFrame = document.getElementById('google-form-submit');
-    googleFrame.addEventListener('load', () => {
-      if (!googleSubmitStarted) return;
-      form.hidden = true;
-      successPanel.hidden = false;
-      document.querySelector('#success-panel .success-eyebrow').textContent = 'Solicitud enviada';
-      document.querySelector('#success-panel h2').textContent = 'Tu historia ya está con nosotras';
-      document.querySelector('#success-panel > p:not(.success-eyebrow):not(.payment-status)').textContent = 'Tu solicitud fue enviada. Revisaremos la información y nos pondremos en contacto contigo por WhatsApp para continuar con el pago y la creación de tu canción.';
-      document.querySelector('#success-panel .order-summary').innerHTML = '<p><strong>✔ Formulario enviado</strong></p><p><strong>⏳ La creación comenzará tras confirmar el pago.</strong></p>';
-      document.getElementById('continue-payment').textContent = 'Volver al inicio';
-      document.getElementById('back-edit').hidden = true;
-      document.getElementById('continue-payment').onclick = () => { window.location.href = '../index.html'; };
-      successPanel.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
-    });
-
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      if (!validateCurrentStep()) return;
-      submitButton.disabled = true;
-      submitButton.textContent = 'Enviando tu historia…';
-      googleSubmitStarted = true;
-      submitToGoogleForms();
-      setTimeout(() => {
-        if (!successPanel.hidden) return;
-        submitButton.disabled = false;
-        submitButton.textContent = 'Preparar mi solicitud ♥';
-        alertBox.textContent = 'No pudimos completar el envío. Inténtalo nuevamente.';
-      }, 12000);
-    });
-
-    showStep(1);
-  document.getElementById('back-edit').addEventListener('click',()=>{
-successPanel.hidden=true;
-form.hidden=false;
-showStep(steps.length-1);
-window.scrollTo({top:0,behavior:'smooth'});
-});
-</script>
-</body>
-</html>
+const form=document.getElementById('song-form'),steps=[...document.querySelectorAll('.wizard-step')],nextButton=document.getElementById('next-step'),prevButton=document.getElementById('prev-step'),submitButton=document.getElementById('submit-form'),alertBox=document.getElementById('wizard-alert'),progressFill=document.getElementById('progress-fill'),progressLabel=document.getElementById('progress-label'),progressPercent=document.getElementById('progress-percent'),dots=[...document.querySelectorAll('.wizard-dots span')],reviewCard=document.getElementById('review-card'),relacionOtraBlock=document.getElementById('relacion-otra-block'),ocasionOtraBlock=document.getElementById('ocasion-otra-block'),emocionOtraBlock=document.getElementById('emocion-otra-block'),successPanel=document.getElementById('success-panel');let currentStep=1;
+const escapeHtml=(value='')=>value.replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+function selectedPlan(){return form.querySelector('input[name="experiencia"]:checked')}
+function formValue(name){const field=form.elements[name];if(!field)return'';if(field instanceof RadioNodeList)return field.value;return field.value||''}
+function isOther(name){return ['Otra','Otro'].includes(formValue(name))}
+function toggleOtherField(selectName,block,inputName){const other=isOther(selectName);block.hidden=!other;const input=form.elements[inputName];input.required=other;if(!other){input.value='';input.classList.remove('field-invalid')}}
+function updateConditionalFields(){toggleOtherField('relacion',relacionOtraBlock,'relacion_otra');toggleOtherField('ocasion',ocasionOtraBlock,'ocasion_otra');toggleOtherField('emocion',emocionOtraBlock,'emocion_otra')}
+function resolvedValue(mainName,otherName){return isOther(mainName)?formValue(otherName):formValue(mainName)}
+function updateProgress(){const percent=Math.round((currentStep/steps.length)*100);progressFill.style.width=`${percent}%`;progressLabel.textContent=`Paso ${currentStep} de ${steps.length}`;progressPercent.textContent=['Tu experiencia','Tus datos','La persona especial','Su historia','El estilo musical','Revisión final'][currentStep-1];dots.forEach((dot,index)=>dot.classList.toggle('active',index<currentStep))}
+function showStep(number){currentStep=Math.max(1,Math.min(number,steps.length));steps.forEach(step=>step.classList.toggle('active',Number(step.dataset.step)===currentStep));prevButton.hidden=currentStep===1;nextButton.hidden=currentStep===steps.length;submitButton.hidden=currentStep!==steps.length;alertBox.textContent='';updateConditionalFields();if(currentStep===steps.length)buildReview();updateProgress();form.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}
+function validateCurrentStep(){const step=steps[currentStep-1],requiredFields=[...step.querySelectorAll('[required]')];let firstInvalid=null;requiredFields.forEach(field=>{field.classList.remove('field-invalid');const invalid=field.type==='radio'?!step.querySelector(`input[name="${field.name}"]:checked`):!field.checkValidity();if(invalid&&!firstInvalid)firstInvalid=field});if(firstInvalid){alertBox.textContent=currentStep===1?'Elige una experiencia para continuar.':'Revisa los campos marcados antes de continuar.';if(firstInvalid.type!=='radio'){firstInvalid.classList.add('field-invalid');firstInvalid.focus()}return false}return true}
+function buildReview(){const plan=selectedPlan();reviewCard.innerHTML=`<h3>Resumen de tu pedido</h3><dl><div><dt>Experiencia</dt><dd>${escapeHtml(plan?.value||'')} · ${escapeHtml(plan?.dataset.price||'')}</dd></div><div><dt>Contacto</dt><dd>${escapeHtml(formValue('comprador_nombre'))}<br>${escapeHtml(formValue('comprador_email'))}<br>${escapeHtml(formValue('comprador_whatsapp'))}</dd></div><div><dt>Destinataria/o</dt><dd>${escapeHtml(formValue('destinatario_nombre'))} · ${escapeHtml(resolvedValue('relacion','relacion_otra'))}<br>${escapeHtml(resolvedValue('ocasion','ocasion_otra'))}</dd></div><div><dt>Dirección musical</dt><dd>${escapeHtml(formValue('estilo'))} · Voz ${escapeHtml(formValue('voz'))}<br>${escapeHtml(resolvedValue('emocion','emocion_otra'))} · ${escapeHtml(formValue('ritmo'))}</dd></div><div class="review-story"><dt>El corazón de la historia</dt><dd>${escapeHtml(formValue('historia')).replace(/\n/g,'<br>')}</dd></div></dl>`}
+nextButton.addEventListener('click',()=>{if(currentStep>=steps.length||!validateCurrentStep())return;showStep(currentStep+1)});prevButton.addEventListener('click',()=>showStep(currentStep-1));form.addEventListener('change',event=>{if(['relacion','ocasion','emocion'].includes(event.target.name))updateConditionalFields();event.target.classList.remove('field-invalid')});form.addEventListener('input',event=>{if(event.target.matches('input, textarea, select')){event.target.classList.remove('field-invalid');if(alertBox.textContent)alertBox.textContent=''}});
+const googleFormAction='https://docs.google.com/forms/d/e/1FAIpQLScbpRswoCbWtfdM_0oyOq0Q2wthCVuxztYfiT02W4uXHLTKlg/formResponse';
+const googleEntry={nombre:'entry.314691855',correo:'entry.1828749494',whatsapp:'entry.1013330642',destinatarioNombre:'entry.1780938346',relacion:'entry.1559767204',ocasion:'entry.657874015',historia:'entry.2015353262',recuerdos:'entry.739824271',detalleEspecial:'entry.1693350233',evitar:'entry.1255368010',estilo:'entry.2048079322',voz:'entry.1222206002',emocion:'entry.236304043',ritmo:'entry.510145914',condiciones:'entry.1729874179'};
+const condicionesTexto='He leído y acepto que el precio de lanzamiento es de US$15, que el tiempo estimado de entrega es de 1 a 3 días hábiles y que el servicio incluye una única versión final de la canción, sin modificaciones posteriores. Confirmo que he incluido en este formulario toda la información que deseo que se tenga en cuenta para crearla.';
+function submitToGoogleForms(){const payload=new FormData();payload.append(googleEntry.nombre,formValue('comprador_nombre'));payload.append(googleEntry.correo,formValue('comprador_email'));payload.append(googleEntry.whatsapp,formValue('comprador_whatsapp'));payload.append(googleEntry.destinatarioNombre,formValue('destinatario_nombre'));payload.append(googleEntry.relacion,resolvedValue('relacion','relacion_otra'));payload.append(googleEntry.ocasion,resolvedValue('ocasion','ocasion_otra'));payload.append(googleEntry.historia,formValue('historia'));payload.append(googleEntry.recuerdos,formValue('recuerdos'));payload.append(googleEntry.detalleEspecial,formValue('frase_especial'));payload.append(googleEntry.evitar,formValue('evitar'));payload.append(googleEntry.estilo,formValue('estilo'));const vozMap={'Femenina':'Voz femenina','Masculina':'Voz masculina','Me da igual / elige la que mejor funcione':'Me da igual / elige la que mejor funcione'};payload.append(googleEntry.voz,vozMap[formValue('voz')]||formValue('voz'));payload.append(googleEntry.emocion,resolvedValue('emocion','emocion_otra'));payload.append(googleEntry.ritmo,formValue('ritmo'));payload.append(googleEntry.condiciones,condicionesTexto);const hiddenForm=document.createElement('form');hiddenForm.method='POST';hiddenForm.action=googleFormAction;hiddenForm.target='google-form-submit';hiddenForm.style.display='none';for(const[name,value]of payload.entries()){const input=document.createElement('input');input.type='hidden';input.name=name;input.value=value;hiddenForm.appendChild(input)}document.body.appendChild(hiddenForm);hiddenForm.submit();setTimeout(()=>hiddenForm.remove(),1500)}
+let googleSubmitStarted=false;const googleFrame=document.getElementById('google-form-submit');googleFrame.addEventListener('load',()=>{if(!googleSubmitStarted)return;form.hidden=true;successPanel.hidden=false;document.querySelector('#success-panel .success-eyebrow').textContent='Solicitud enviada';document.querySelector('#success-panel h2').textContent='Tu historia ya está con nosotras';document.querySelector('#success-panel > p:not(.success-eyebrow):not(.payment-status)').textContent='Tu solicitud fue enviada. Revisaremos la información y nos pondremos en contacto contigo por WhatsApp para continuar con el pago y la creación de tu canción.';document.querySelector('#success-panel .order-summary').innerHTML='<p><strong>✔ Formulario enviado</strong></p><p><strong>⏳ La creación comenzará tras confirmar el pago.</strong></p>';document.getElementById('continue-payment').textContent='Volver al inicio';document.getElementById('back-edit').hidden=true;document.getElementById('continue-payment').onclick=()=>{window.location.href='../index.html'};successPanel.scrollIntoView({behavior:'smooth',block:'center'})});
+form.addEventListener('submit',event=>{event.preventDefault();if(!validateCurrentStep())return;submitButton.disabled=true;submitButton.textContent='Enviando tu historia…';googleSubmitStarted=true;submitToGoogleForms();setTimeout(()=>{if(!successPanel.hidden)return;submitButton.disabled=false;submitButton.textContent='Preparar mi solicitud ♥';alertBox.textContent='No pudimos completar el envío. Inténtalo nuevamente.'},12000)});
+document.getElementById('back-edit').addEventListener('click',()=>{successPanel.hidden=true;form.hidden=false;showStep(steps.length);window.scrollTo({top:0,behavior:'smooth'})});showStep(1);
+</script></body></html>
